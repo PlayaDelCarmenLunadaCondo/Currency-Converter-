@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+
+</head>
+
+<body onload="checkUpdate()">
+  <center>
+    <h1 class="titleText">Currency Converter</h1>
+  </center>
+
+
+  <div class="sel">
+
+    <center>
+      <label for="in_cur">Select Original Currency:</label>
+      <select name="in_cur" id="in_cur1" onchange="saveInCur()">
+
+      </select>
+
+
+  </div>
+  </center>
+
+  <center>
+    <button onclick="switchCurrency()">⇅</button>
+  </center>
+
+  <center>
+    <label for="out_cur">Select Desired Currency:</label>
+
+    <select name="out_cur" id="out_cur1" onchange="saveOutCur()">
+
+
+    </select>
+
+    <br>
+    <br>
+
+    <input type="number" inputmode="numeric" id="amount" />
+
+    <br>
+    <br>
+
+    <button onclick="displaySelection()">Convert</button>
+  </center>
+
+
+</body>
