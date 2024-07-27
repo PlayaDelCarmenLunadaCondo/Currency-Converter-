@@ -5,7 +5,7 @@
 
 const updateURL = "https://v6.exchangerate-api.com/v6/b5c440e589b6b6756c60fb50/latest/USD"
 
-const currDict = {
+const currencyDictionary = {
   "AED": "UAE Dirham",
   "AFN": "Afghani",
   "ALL": "Albanian Lek",
@@ -287,9 +287,10 @@ async function callApi() {
 
 //Fill both drop downs with a given dict
 function fillSelect(list) {
-  select = document.getElementById('in_cur1');
+  select1 = document.getElementById('in_cur1');
   select2 = document.getElementById('out_cur1');
 
+  //recall last values of each drop down
   in_cur = ""
   out_cur = ""
 
@@ -303,27 +304,27 @@ function fillSelect(list) {
 
   console.log(list)
   //add information to both drop downs
-  for (const [key, value] of Object.entries(list)) {
-    if (currDict[key] === undefined) {
+  for (var key in list) {
+    if (currencyDictionary[key] === undefined) {
       console.log("Error: ", key, value, " Not found");
     }
     else {
       var opt = document.createElement('option');
-      opt.value = value;
-      opt.innerHTML = currDict[key];
-      select.appendChild(opt);
+      opt.value = list[key];
+      opt.innerHTML = currencyDictionary[key];
+      select1.appendChild(opt);
 
       if (opt.innerHTML === in_cur) {
-        select.value = value;
+        select1.value = list[key];
       }
 
       var opt2 = document.createElement('option');
-      opt2.value = value;
-      opt2.innerHTML = currDict[key];
+      opt2.value = list[key];;
+      opt2.innerHTML = currencyDictionary[key];
       select2.appendChild(opt2);
 
       if (opt2.innerHTML === out_cur) {
-        select2.value = value;
+        select2.value = list[key];;
       }
 
     }
