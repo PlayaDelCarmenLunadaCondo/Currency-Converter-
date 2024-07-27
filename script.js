@@ -1,7 +1,7 @@
 // APPLE DOCS FOR INSPECTING WEBPAGES ON MAC SAFARI
 //https://developer.apple.com/documentation/safari-developer-tools/inspecting-safari-macos
 
-BriannaCurrencyConverter.github.io
+//TODO: optimize website for use on phone with @media
 
 const updateURL = "https://v6.exchangerate-api.com/v6/b5c440e589b6b6756c60fb50/latest/USD"
 
