@@ -290,6 +290,7 @@ function fillSelect(list) {
   in_cur = ""
   out_cur = ""
 
+  console.log(localStorage.getItem('in_cur'))
   if (localStorage.getItem('in_cur') !== undefined && localStorage.getItem('in_cur') !== null) {
     in_cur = localStorage.getItem('in_cur');
   }
@@ -297,6 +298,7 @@ function fillSelect(list) {
     out_cur = localStorage.getItem('out_cur');
   }
 
+  console.log(list)
   //add information to both drop downs
   for (const [key, value] of Object.entries(list)) {
     if (currDict[key] === undefined) {
