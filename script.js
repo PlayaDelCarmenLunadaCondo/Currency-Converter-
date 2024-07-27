@@ -270,14 +270,17 @@ async function checkUpdate() {
 function getStoredCurrency() {
   let list = JSON.parse(localStorage.getItem("currList"))
 
+  console.log("stored ")
   fillSelect(list)
 }
 
 async function callApi() {
   //Get the API information
   test = await (await ((await fetch(updateURL)).json()));
-  console.log(test)
+  console.log("stored, ", test)
   localStorage.setItem("currList", JSON.stringify(test['conversion_rates']))
+
+  console.log("stored ")
 
   fillSelect(test['conversion_rates'])
 }
