@@ -192,14 +192,23 @@ const currencyDictionary = {
 
 function displaySelection() {
   var in_cur = document.getElementById("in_cur1").value;
-  var out_cur = document.getElementById("out_cur1").value;
+  var drop = document.getElementById("out_cur1");
+  var out_cur = drop.value;
+  var currName = drop.options[drop.selectedIndex].text;
   var amount = document.getElementById("amount").value;
 
   //parse float when getting the values 
 
-  var result = (parseFloat(amount) * parseFloat(out_cur)) / parseFloat(in_cur);
+  var resultNum = (parseFloat(amount) * parseFloat(out_cur)) / parseFloat(in_cur);
 
-  result = result.toFixed(2)
+  if (resultNum < 1) {
+    result = (resultNum.toFixed(2)) + " " + currName
+
+  }
+  else {
+    result = (resultNum.toFixed(2)) + " " + currName + "s"
+  }
+
 
   alert(result);
 }
