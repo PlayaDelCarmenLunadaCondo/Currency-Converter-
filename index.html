@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>CurrencyConverter</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js"></script>
-  
+  <script src="dicts.js"></script>
+
 </head>
 
 <body onload="checkUpdate()">
@@ -20,9 +21,14 @@
 
     <center>
       <label for="in_cur">Select Original Currency:</label>
-      <select name="in_cur" id="in_cur1" onchange="saveInCur()">
+      <br>
+    <!--  <div class='searchable_drop_down'> -->
+       <!-- <input id='in_cur0' onkeyup='filterFunction()' placeholder="search..."> -->
+        <br>
+        <select name="in_cur" id="in_cur1" onchange="saveInCur()">
+        </select>
+      </div>
 
-      </select>
 
     </center>
   </div>
@@ -37,8 +43,11 @@
 
   <center>
     <label for="out_cur">Select Desired Currency:</label>
+    <br>
+    <select name="out_cur" id="out_cur1" onchange="saveInCur()">
+    </select>
 
-    <select name="out_cur" id="out_cur1" onchange="saveOutCur()">
+
 
     </select>
 
